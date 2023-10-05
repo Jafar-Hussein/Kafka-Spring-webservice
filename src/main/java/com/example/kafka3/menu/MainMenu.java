@@ -1,6 +1,7 @@
 package com.example.kafka3.menu;
 
 
+import com.example.kafka3.InputClass.InputHandler;
 import com.example.kafka3.kafkaconsumer.ClientConsumer;
 import org.json.simple.JSONObject;
 
@@ -10,12 +11,14 @@ public class MainMenu{
 
 //    private static MovieRepository movieRepository;
 //    private static MovieInfo movieToUpdate;
-    private static final Scanner scanner = new Scanner(System.in);
+    private static InputHandler inputHandler;
 
 public static void main(String[] args) {
+    inputHandler = new InputHandler();
     MainMenu mainMenu = new MainMenu();
     mainMenu.menu();
-    scanner.close();
+    inputHandler.closeScanner();
+
 }
     public void menu() {
 
@@ -25,11 +28,11 @@ public static void main(String[] args) {
                 int choice = getUserChoice();
                 switch (choice) {
                     case 1:
-                        scanner.nextLine(); // Consume the newline character
+                        inputHandler.getStringInput(); // Consume the newline character
                         addMovie();
                         break;
                     case 2:
-                        scanner.nextLine(); // Consume the newline character
+                        inputHandler.getStringInput(); // Consume the newline character
                         viewMovies();
                         break;
                     case 3:
@@ -42,7 +45,7 @@ public static void main(String[] args) {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a valid option.");
-                scanner.nextLine(); // Consume the newline character
+                inputHandler.getStringInput(); // Consume the newline character
             }
         }
     }
@@ -51,70 +54,11 @@ public static void main(String[] args) {
         System.out.println("Exiting the application.");
         System.exit(0);
     }
-//private static void updateMoviesFromDb() {
-//    System.out.print("Enter Movie ID to Update: ");
-//    long movieIdToUpdate = scanner.nextLong();
-//    scanner.nextLine(); // Consume the newline character
-//
-////    MovieInfo movieToUpdate = movieRepository.findById(movieIdToUpdate).orElse(null);
-////    if (movieToUpdate == null) {
-////        System.out.println("Movie not found!");
-////        return;
-////    }
-//
-//    System.out.print("Enter Updated Movie Title: ");
-//    String title = scanner.nextLine();
-//    System.out.print("Enter Updated Movie Genre: ");
-//    String genre = scanner.nextLine();
-//    System.out.print("Enter Updated Movie Release Date: ");
-//    String releaseDate = scanner.nextLine();
-//
-//    movieToUpdate.setMovieTitle(title);
-//    movieToUpdate.setMovieGenre(genre);
-//    movieToUpdate.setMovieReleaseDate(releaseDate);
-//
-//    movieRepository.save(movieToUpdate);
-//
-//    System.out.println("Movie updated successfully!");
-//}
-
-
-//    private void updateMoviesFromDb() {
-//        System.out.print("Enter Movie ID to Update: ");
-//        long movieIdToUpdate = scanner.nextLong();
-//        scanner.nextLine(); // Consume the newline character
-//
-//        MovieInfo movieInfo = new MovieInfo();
-//        movieInfo.setId(movieIdToUpdate);
-//
-//        System.out.print("Enter Updated Movie Title: ");
-//        String title = scanner.nextLine();
-//        System.out.print("Enter Updated Movie Genre: ");
-//        String genre = scanner.nextLine();
-//        System.out.print("Enter Updated Movie Release Date: ");
-//        String releaseDate = scanner.nextLine();
-//
-//        movieInfo.setMovieTitle(title);
-//        movieInfo.setMovieGenre(genre);
-//        movieInfo.setMovieReleaseDate(releaseDate);
-//
-//        movieService.updateMovie(movieInfo);
-//        System.out.println("Movie updated successfully!");
-//    }
-
-//    private void deleteMoviesFromDb() {
-//        System.out.print("Enter Movie ID to Delete: ");
-//        long movieIdToDelete = scanner.nextLong();
-//        scanner.nextLine(); // Consume the newline character
-//
-//        movieRepository.deleteById(movieIdToDelete);
-//        System.out.println("Movie deleted successfully!");
-//    }
 
 
     private static void viewMovies() {
         System.out.println("Enter topic name");
-        String topicName = scanner.nextLine();
+        String topicName = inputHandler.getStringInput();
         ClientConsumer.getDataFromKafka(topicName);
     }
 
@@ -122,14 +66,14 @@ public static void main(String[] args) {
 
     private static void addMovie() {
         System.out.println("Enter id");
-        long id = scanner.nextLong();
-        scanner.nextLine(); // Consume the newline character
+        long id = inputHandler.getLongInput();
+        inputHandler.getStringInput(); // Consume the newline character
         System.out.print("Enter Movie Title: ");
-        String title = scanner.nextLine();
+        String title = inputHandler.getStringInput();
         System.out.print("Enter Movie Genre: ");
-        String genre = scanner.nextLine();
+        String genre = inputHandler.getStringInput();
         System.out.print("Enter Movie Release Date: ");
-        String releaseDate = scanner.nextLine();
+        String releaseDate = inputHandler.getStringInput();
 
         JSONObject myObj = new JSONObject();
         myObj.put("id", id);
@@ -148,7 +92,7 @@ public static void main(String[] args) {
     }
     private int getUserChoice() {
         System.out.print("Select an option:\n ");
-        return scanner.nextInt();
+        return inputHandler.getIntInput();
     }
 
 
