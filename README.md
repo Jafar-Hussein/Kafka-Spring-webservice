@@ -6,8 +6,8 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-%23009639?style=for-the-badge&logo=spring&logoColor=white)
 
 ## Description
-This apllication was made for the reason of wanting to have a movie list for a movie night marathon were users want to binge watch a lot of movies.<br>
-The project integrates kafka with the database MongoDb to save the data.
+This apllication was made for the reason of wanting to have a movie list for a movie night marathon where users want to binge watch a lot of movies.
+The project integrates kafka with the database MongoDb to save the data and lets the user print out the lift from the kafka server topic.
 
 ## Table of Contents
 
