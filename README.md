@@ -6,37 +6,29 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-%23009639?style=for-the-badge&logo=spring&logoColor=white)
 
 ## Description
+This apllication was made for the reason of wanting to have a movie list for a movie night marathon were users want to binge watch a lot of movies.<br>
+The project integrates kafka with the database MongoDb to save the data.
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+## Table of Contents
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
++ [Installation](#installation)
++ [Usage](#usage)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
+*Make sure you these downloaded before you start*
++ An IDE of your choice prefurably intelliJ [Here](https://www.jetbrains.com/idea/download/#section=windows) and the latest [JDK 21](https://www.oracle.com/se/java/technologies/downloads/)
++ [Apache Kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.5.0/kafka_2.13-3.5.0.tgz) - Download the latest version of Apache Kafka and extract the files to a directory of your choice.
++ [MongoDB Community Server](https://www.mongodb.com/try/download/community) - Download the latest version of MongoDB and install it. Make sure to install the MongoDB Compass as well.
++ Clone this GitHub repository to your computer or download it.
++ 
 ## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
+*Before starting the application make sure you have these open*
++ Open the directory where you extracted the Apache Kafka files and run the following commands in the terminal:
+    + (ZooKeeper) - `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
+    + (Broker) - `.\bin\windows\kafka-server-start.bat .\config\server.properties`
++ Open your MongoDb Compass and press the connect button
++ when in intellij go to WebApi module and click on Kafka3Application file and start it 
 ## Credits
 
 List your collaborators, if any, with links to their GitHub profiles.
