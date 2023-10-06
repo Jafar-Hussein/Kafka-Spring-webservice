@@ -28,7 +28,7 @@ The project integrates kafka with the database MongoDb to save the data.
     + (ZooKeeper) - `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
     + (Broker) - `.\bin\windows\kafka-server-start.bat .\config\server.properties`
 + Open your MongoDb Compass and press the connect button
-+ when in intellij go to WebApi module and click on Kafka3Application file and start it
++ when in intellij go to WebApi module and click on Kafka3Application file and start it by clicking on the play button on the top right
 <br>![KafkaApp](picture/kafkaApp.jpg)
 ## Credits
 
