@@ -21,7 +21,6 @@ The project integrates kafka with the database MongoDb to save the data.
 + [Apache Kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.5.0/kafka_2.13-3.5.0.tgz) - Download the latest version of Apache Kafka and extract the files to a directory of your choice.
 + [MongoDB Community Server](https://www.mongodb.com/try/download/community) - Download the latest version of MongoDB and install it. Make sure to install the MongoDB Compass as well.
 + Clone this GitHub repository to your computer or download it.
-+ 
 ## Usage
 *Before starting the application make sure you have these open*
 + Open the directory where you extracted the Apache Kafka files and run the following commands in the terminal:
@@ -30,6 +29,9 @@ The project integrates kafka with the database MongoDb to save the data.
 + Open your MongoDb Compass and press the connect button
 + when in intellij go to WebApi module and click on Kafka3Application file and start it by clicking on the play button on the top right
 <br>![KafkaApp](picture/kafkaApp.jpg)
+
++ now go to the client module and start the main class
++ ![clientApp](picture/main.jpg)
 ## Credits
 
 List your collaborators, if any, with links to their GitHub profiles.
