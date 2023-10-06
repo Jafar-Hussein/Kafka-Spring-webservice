@@ -6,8 +6,7 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-%23009639?style=for-the-badge&logo=spring&logoColor=white)
 
 ## Description
-This apllication was made for the reason of wanting to have a movie list for a movie night marathon where users want to binge watch a lot of movies.
-The project integrates kafka with the database MongoDb to save the data and lets the user print out the lift from the kafka server topic.
+This application was created to enhance the movie-watching experience during marathon movie nights. It leverages the power of Apache Kafka and MongoDB to efficiently manage movie lists. By integrating Kafka, real-time updates are ensured, and users can easily access their lists from the Kafka server's topic, making movie night planning seamless and enjoyable
 
 ## Table of Contents
 
