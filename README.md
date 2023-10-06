@@ -19,13 +19,15 @@ The project integrates kafka with the database MongoDb to save the data.
 *Make sure you these downloaded before you start*
 + An IDE of your choice prefurably intelliJ [Here](https://www.jetbrains.com/idea/download/#section=windows) and the latest [JDK 21](https://www.oracle.com/se/java/technologies/downloads/)
 + [Apache Kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.5.0/kafka_2.13-3.5.0.tgz) - Download the latest version of Apache Kafka and extract the files to a directory of your choice.
-+ [MongoDB Community Server](https://www.mongodb.com/try/download/community) - Download the latest version of MongoDB and install it. Make sure to install the MongoDB Compass as well.
++ [MySQL Community Server](https://dev.mysql.com/downloads/mysql/) - Download comunity server and make sure you download the latest server and workbench, also make sure you download the connector/j 
 + Clone this GitHub repository to your computer or download it.
 ## Usage
 *Before starting the application make sure you have these open*
 + Open the directory where you extracted the Apache Kafka files and run the following commands in the terminal:
     + (ZooKeeper) - `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
     + (Broker) - `.\bin\windows\kafka-server-start.bat .\config\server.properties`
+
++ In the properties file [application.properties](WebApi/src/main/resources/application.properties) you should change the spring.datasource.password to your own sql password
 + Open your MongoDb Compass and press the connect button
 + when in intellij go to WebApi module and click on Kafka3Application file and start it by clicking on the play button on the top right
 <br>![KafkaApp](picture/kafkaApp.jpg)
