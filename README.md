@@ -19,7 +19,8 @@ The project integrates kafka with the database MongoDb to save the data.
 *Make sure you these downloaded before you start*
 + An IDE of your choice prefurably intelliJ [Here](https://www.jetbrains.com/idea/download/#section=windows) and the latest [JDK 21](https://www.oracle.com/se/java/technologies/downloads/)
 + [Apache Kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.5.0/kafka_2.13-3.5.0.tgz) - Download the latest version of Apache Kafka and extract the files to a directory of your choice.
-+ [MySQL Community Server](https://dev.mysql.com/downloads/mysql/) - Download comunity server and make sure you download the latest server and workbench, also make sure you download the connector/j 
++ [MySQL Community Server](https://dev.mysql.com/downloads/mysql/) - Download comunity server and make sure you download the latest server and workbench, also make sure you download the connector/j as shown in the picture below
++ ![download](picture/download.png)
 + Clone this GitHub repository to your computer or download it.
 ## Usage
 *Before starting the application make sure you have these open*
@@ -43,9 +44,6 @@ If you used any third-party assets that require attribution, list the creators w
 + [Lombok 1.18.30](https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.30)
 + [Spring Boot Starter Test 3.1.4](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/3.1.4)
 + [Spring Boot Kafka Test 3.0.11](https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test/3.0.11)
-+ [Spring Boot Starter Data MongoDB 3.1.4](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb/3.1.4)
-+ [Mongo Driver Sync 4.10.2](https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync)
-+ [Mongo Driver Core 4.10.2](https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core)
 + rest is in the pom files [pom file](pom.xml)
 
 
