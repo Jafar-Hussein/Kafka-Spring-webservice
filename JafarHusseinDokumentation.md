@@ -41,19 +41,38 @@ I denna klassen så bröt jag upp allting i olika metoder för att göra det enk
   + viewMovies 
     + denna metoden skriver ut all filmer som finns i kafka topicen.
 
++ #### TopicConfig
+  +  Denna klassen skapar en topic i kafka servern.
+  
++ #### JsonMessageController
+  + Denna klassen skapar en Url mappring som tar emot en json objekt och skickar den till en kafka topic via producer.
+
++ #### JsonProducer
+  + Denna klassen skapar en producer som skickar en json objekt med MovieInfo payload till en kafka topic.
++ #### JsonConsumer
+  + Denna klassen skapar en consumer som läser av datan från en kafka topic och skriver ut datan i java applikationen.
+  + #### MovieInfo
+    + Denna klassen är en payload som används för att skicka datan till en kafka topic.
+    
 ### Beskriv något som var besvärligt att få till
+Det som var besvärligt att få till var att få alla moduler att fungera tillsammans. Men till slut så fick jag det att fungera genom att lägga till dependencies i pom filerna
 
 ### Beskriv om du fått byta lösning och varför i sådana fall
-
+Jag har fått byta flera lösningar på grund av att jag var osäker på vad jag ville ha till mitt program men också på grund av att det var också många bugs i koden.
 
 ## Slutsatser
+I slutet av dagen så har denna projektet vart roligt och jag har fått en inblick hur det ser ut att jobba med kafka och spring boot och kommer att använda denna projektet för att utveckla vidare.
 
 ### Vad gick bra
+Det var minimalt med problem, så man kan säga att nästan allting har gått bra när jag satte upp ett tydligt plan.
 
 ### Vad gick dåligt
+Att fixa moduler var väldigt jobbigt att implementer men till slut så gick det bra
 
 ### Vad har du lärt dig
+Det jag har lärt mig är hur man sätter upp en kafka cluster och implementera det med java och spring boot samt hur man skapar unit testar kafka.
 
 ### Vad hade ni gjort annorlunda om ni gjort om projektet
-
+Jag skulle ha satt upp en tydlig plan över vad jag vill ha för program så att jag vet vad som behövs för att implementera planen.
 ### Vilka möjligheter ser du med de kunskaper du fått under kursen.
+Efter kursen har jag fått kunskap om kafka och hur det används med java för att senare ta med mig till praktikplatsen och implementera det jag har gjort i denna kurs. 
