@@ -32,15 +32,19 @@ The project integrates kafka with the database MongoDb to save the data.
 
 + now go to the client module and start the main class
 + ![clientApp](picture/main.jpg)
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-* [member 1](https://github.com/person1)
-* [member 2](https://github.com/person1)
 
 ## Dependencies
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-* [junit jupiter 5](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/5.7.0)
++ [junit jupiter 5](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/5.7.0)
++ [Spring Boot Starter Web 3.1.4](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/3.1.4)
++ [Spring Kafka 3.0.11](https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka/3.0.11)
++ [Lombok 1.18.30](https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.30)
++ [Spring Boot Starter Test 3.1.4](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/3.1.4)
++ [Spring Boot Kafka Test 3.0.11](https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test/3.0.11)
++ [Spring Boot Starter Data MongoDB 3.1.4](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb/3.1.4)
++ [Mongo Driver Sync 4.10.2](https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync)
++ [Mongo Driver Core 4.10.2](https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core)
++ rest is in the pom files [pom file](pom.xml)
 
 If you followed tutorials, include links to those here as well.
 
