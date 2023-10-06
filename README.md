@@ -29,7 +29,7 @@ The project integrates kafka with the database MongoDb to save the data.
     + (Broker) - `.\bin\windows\kafka-server-start.bat .\config\server.properties`
 + Open your MongoDb Compass and press the connect button
 + when in intellij go to WebApi module and click on Kafka3Application file and start it
-<br>![KafkaApp](picture/KafkaApp.jpg)
+<br>![KafkaApp](Kafka-Springboot-webservice/picture/KafkaApp.jpg)
 ## Credits
 
 List your collaborators, if any, with links to their GitHub profiles.
