@@ -13,6 +13,7 @@ The project integrates kafka with the database MongoDb to save the data.
 
 + [Installation](#installation)
 + [Usage](#usage)
++ [Dependencies](#Dependencies)
 
 ## Installation
 
