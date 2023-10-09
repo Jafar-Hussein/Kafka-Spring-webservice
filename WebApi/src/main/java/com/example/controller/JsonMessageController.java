@@ -21,8 +21,8 @@ public class JsonMessageController {
 
     // Endpoint för att skicka JSON till Kafka
     @PostMapping("/publish")
-    public ResponseEntity<String> publish(@RequestBody MovieInfo movieInfo) {
-        kafkaProducer.sendMessage(movieInfo);
-        return ResponseEntity.ok("JSON message sent to Kafka Topic");
+    public ResponseEntity<String> publish(@RequestBody MovieInfo movieInfo) { // @RequestBody gör att vi kan skicka JSON i bodyn av requesten
+        kafkaProducer.sendMessage(movieInfo); // skicka JSON till Kafka
+        return ResponseEntity.ok("JSON message sent to Kafka Topic"); // returnera att meddelandet skickats
     }
 }

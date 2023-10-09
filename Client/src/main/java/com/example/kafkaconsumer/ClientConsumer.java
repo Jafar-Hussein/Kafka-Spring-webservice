@@ -1,6 +1,5 @@
 package com.example.kafkaconsumer;
 
-
 import com.example.payload.MovieInfo;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
@@ -28,19 +27,25 @@ import java.util.Properties;
 public class ClientConsumer {
     private final Properties prop = new Properties();
 
-    public static String sendToWebAPI(JSONObject myObj) {
+    public static String sendToWebAPI(JSONObject myObj) { // Skicka JSON till WebAPI
+        // Skapar en variabel för att lagra svaret från WebAPI
         String returnResp = "";
+        // Skapar en HTTP-klient
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
-            HttpPost httpPost = new HttpPost("http://localhost:8080/api/v1/kafka/json/publish");
+            HttpPost httpPost = new HttpPost("http://localhost:8080/api/v1/kafka/json/publish"); // Skapa en HTTP POST-förfrågan till WebAPI
 
             // Skapa en JSON-förfrågningskropp
             String jsonPayload = myObj.toJSONString();
+            // Skapa en HTTP-förfrågningskropp med JSON-förfrågningskroppen
             StringEntity entity = new StringEntity(jsonPayload, ContentType.APPLICATION_JSON);
+            // Lägg till HTTP-förfrågningskroppen till HTTP POST-förfrågan
             httpPost.setEntity(entity);
 
             // Skicka förfrågan och hantera svaret
             try (CloseableHttpResponse response = httpClient.execute(httpPost)) {
+                // Hämta svaret från WebAPI
                 HttpEntity responseEntity = response.getEntity();
+                // Om svaret inte är null, konvertera svaret till en sträng och lagra i returnResp
                 if (responseEntity != null) {
                     String responseString = EntityUtils.toString(responseEntity);
                     System.out.println("Svar från server: " + responseString);
@@ -54,27 +59,27 @@ public class ClientConsumer {
     }
 
     public static ArrayList<MovieInfo> getDataFromKafka(String topicName) {
-        //skapar properties för consumer
+        // Skapar properties för consumer
         Properties props = new Properties();
-        // lägger till configuration för consumer
+        // Lägger till konfiguration för consumer
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "myGroup");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
         props.put("spring.json.trusted.packages", "*");
 
-        //skapar consumer med properties för att kunna hämta data från topic
+        // Skapar consumer med properties för att kunna hämta data från topic
         Consumer<String, MovieInfo> consumer = new KafkaConsumer<>(props);
-        // assignar topic till consumer
+        // Assignar topic till consumer
         consumer.assign(Collections.singletonList(new TopicPartition(topicName, 0)));
 
-        //Gå till början av Topic
+        // Gå till början av topic
         consumer.seekToBeginning(consumer.assignment());
 
-        // skapar en lista för att lagra meddelanden
+        // Skapar en lista för att lagra meddelanden
         ArrayList<MovieInfo> movies = new ArrayList<MovieInfo>();
 
-        //While Loop som hämtar i JSON format
+        // While-loop som hämtar i JSON-format
         while (true) {
             ConsumerRecords<String, MovieInfo> records = consumer.poll(Duration.ofMillis(100));
             if (records.isEmpty()) continue;
@@ -83,7 +88,7 @@ public class ClientConsumer {
             }
             break;
         }
-        // en for loop som skriver ut alla filmer i listan med film titel
+        // En for-loop som skriver ut alla filmer i listan med film titel
         for (MovieInfo movie : movies) {
             System.out.println(movie.getMovieTitle());
         }
