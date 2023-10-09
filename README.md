@@ -38,6 +38,25 @@ This application was created to enhance the movie-watching experience during mar
 + now go to the client module and start the main class
 + ![clientApp](picture/main.jpg)
 
+  ## setup
+### JsonMessageController
++ This class is a Spring Boot REST controller.
++ It handles HTTP POST requests at "/api/v1/kafka/json/publish"
++ When it receives a request, it sends JSON data to a Kafka topic using a JsonProducer.
+
+### JsonProducer
++ This class is a Kafka producer service
++ It sends messages to a Kafka topic with JSON data
++ If the message or any of its fields are null, an error message is logged, and the message is not sent
+### JsonConsumer
++ This class is a Kafka consumer service
++ It listens to a Kafka topic with the specified topic name and group ID
++ When a message is received, it saves the message in a database and logs the message received
+### ClientConsumer
++ This class is a service responsible to send movie data to the Web API
++ It configures a Kafka consumer with the specified properties
++ It polls the Kafka topic for records in JSON format, processes them, and returns a list of MovieInfo objects
+
 ## Dependencies
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 + [junit jupiter 5](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/5.7.0)
