@@ -27,6 +27,7 @@ This application was created to enhance the movie-watching experience during mar
 + Open the directory where you extracted the Apache Kafka files and run the following commands in the terminal:
     + (ZooKeeper) - `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
     + (Broker) - `.\bin\windows\kafka-server-start.bat .\config\server.properties`
+    + note that the terminals must stay open all the time until you are done with everything
 + if you are using macOs or Linux the commands are different, use this link and follow the instructions to start your server [Start kafka server and zookeper for linus or mac](https://kafka.apache.org/quickstart)
 
 + In the properties file [application.properties](WebApi/src/main/resources/application.properties) you should change the spring.datasource.password to your own sql password
