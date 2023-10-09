@@ -44,6 +44,7 @@ If you used any third-party assets that require attribution, list the creators w
 + [Lombok 1.18.30](https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.30)
 + [Spring Boot Starter Test 3.1.4](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/3.1.4)
 + [Spring Boot Kafka Test 3.0.11](https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test/3.0.11)
++ [MySQL Connector Java 8.1.0](https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.1.0)
 + rest is in the pom files [pom file](pom.xml)
 
 
