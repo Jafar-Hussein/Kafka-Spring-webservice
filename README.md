@@ -27,7 +27,7 @@ This application was created to enhance the movie-watching experience during mar
 + Open the directory where you extracted the Apache Kafka files and run the following commands in the terminal:
     + (ZooKeeper) - `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
     + (Broker) - `.\bin\windows\kafka-server-start.bat .\config\server.properties`
-+ if you are using macOs or Linux follow the commands are different, use this link to start your server [Start kafka server and zookeper for linus or mac](https://kafka.apache.org/quickstart)
++ if you are using macOs or Linux the commands are different, use this link and follow the instructions to start your server [Start kafka server and zookeper for linus or mac](https://kafka.apache.org/quickstart)
 
 + In the properties file [application.properties](WebApi/src/main/resources/application.properties) you should change the spring.datasource.password to your own sql password
 + Open your MongoDb Compass and press the connect button
