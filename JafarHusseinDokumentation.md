@@ -41,19 +41,26 @@ I denna klassen så bröt jag upp allting i olika metoder för att göra det enk
   + viewMovies 
     + denna metoden skriver ut all filmer som finns i kafka topicen.
 
-+ #### TopicConfig
-  +  Denna klassen skapar en topic i kafka servern.
-  
-+ #### JsonMessageController
-  + Denna klassen skapar en Url mappring som tar emot en json objekt och skickar den till en kafka topic via producer.
+### JsonMessageController
+- Det här klassen är en Spring Boot REST-controller.
+- Den hanterar HTTP POST-förfrågningar på "/api/v1/kafka/json/publish".
+- När den tar emot en förfrågan skickar den JSON-data till ett Kafka-ämne med hjälp av en JsonProducer.
 
-+ #### JsonProducer
-  + Denna klassen skapar en producer som skickar en json objekt med MovieInfo payload till en kafka topic.
-+ #### JsonConsumer
-  + Denna klassen skapar en consumer som läser av datan från en kafka topic och skriver ut datan i java applikationen.
-  + #### MovieInfo
-    + Denna klassen är en payload som används för att skicka datan till en kafka topic.
-    
+### JsonProducer
+- Det här klassen är en Kafka-producenttjänst.
+- Den skickar meddelanden till ett Kafka-ämne med JSON-data.
+- Om meddelandet eller något av dess fält är null loggas ett felmeddelande och meddelandet skickas inte.
+
+### JsonConsumer
+- Det här klassen är en Kafka-konsumenttjänst.
+- Den lyssnar på ett Kafka-ämne med det angivna ämnesnamnet och grupp-ID:t.
+- När ett meddelande tas emot sparar den meddelandet i en databas och loggar det mottagna meddelandet.
+
+### ClientConsumer
+- Det här klassen är en tjänst som är ansvarig för att skicka filmdata till Web API:en.
+- Den konfigurerar en Kafka-konsument med de angivna egenskaperna.
+- Den hämtar poster från Kafka-ämnet i JSON-format, bearbetar dem och returnerar en lista med MovieInfo-objekt.
+  
 ### Beskriv något som var besvärligt att få till
 Det som var besvärligt att få till var att få alla moduler att fungera tillsammans. Men till slut så fick jag det att fungera genom att lägga till dependencies i pom filerna
 
