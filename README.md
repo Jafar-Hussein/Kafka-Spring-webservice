@@ -27,6 +27,8 @@ This application was created to enhance the movie-watching experience during mar
 + Open the directory where you extracted the Apache Kafka files and run the following commands in the terminal:
     + (ZooKeeper) - `.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
     + (Broker) - `.\bin\windows\kafka-server-start.bat .\config\server.properties`
+    + note that the terminals must stay open all the time until you are done with everything
++ if you are using macOs or Linux the commands are different, use this link and follow the instructions to start your server [Start kafka server and zookeper for linus or mac](https://kafka.apache.org/quickstart)
 
 + In the properties file [application.properties](WebApi/src/main/resources/application.properties) you should change the spring.datasource.password to your own sql password
 + Open your MongoDb Compass and press the connect button
@@ -35,6 +37,25 @@ This application was created to enhance the movie-watching experience during mar
 
 + now go to the client module and start the main class
 + ![clientApp](picture/main.jpg)
+
+ ## setup
+  ### JsonMessageController
+  + This class is a Spring Boot REST controller.
+  + It handles HTTP POST requests at "/api/v1/kafka/json/publish"
+  + When it receives a request, it sends JSON data to a Kafka topic using a JsonProducer.
+
+### JsonProducer
+  + This class is a Kafka producer service
+  + It sends messages to a Kafka topic with JSON data
+  + If the message or any of its fields are null, an error message is logged, and the message is not sent
+### JsonConsumer
+  + This class is a Kafka consumer service
+  + It listens to a Kafka topic with the specified topic name and group ID
+  + When a message is received, it saves the message in a database and logs the message received
+### ClientConsumer
+  + This class is a service responsible to send movie data to the Web API
+  + It configures a Kafka consumer with the specified properties
+  + It polls the Kafka topic for records in JSON format, processes them, and returns a list of MovieInfo objects
 
 ## Dependencies
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
