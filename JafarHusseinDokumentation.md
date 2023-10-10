@@ -18,12 +18,6 @@
 ### Vad som varit svårt
  Att skapa applikationen var inte svårt, men det som gjorde det svårt var att skapa seperata moduler där jag fick massa med problem med att få dem att fungera tillsammans.
 ### Beskriv lite olika lösningar du gjort
-+  #### Clientconsumer
-  + sendToWebApi
-    + denna tar in en json objekt som parameter och skickar den till en web api via en http clien.
-  + getDataFromKafka
-    + denna tar in en string topicName som parameter så att den kan skriva ut datan från topicen.
-    
 + #### inputHandler
     +  Denna klassen hanterar användarens input så att den blir återanvändbar och för att vi inte har massa scanners i MainMenu klasse.
  
